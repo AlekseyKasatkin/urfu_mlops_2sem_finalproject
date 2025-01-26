@@ -11,4 +11,11 @@ pandas
 pip
 python-dotenv
 scikit-learn
--e .
+catboost
+fastapi
+pydantic
+transformers
+uvicorn
+dvc
+aws
+seaborn
