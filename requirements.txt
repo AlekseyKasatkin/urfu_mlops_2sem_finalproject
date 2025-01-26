@@ -17,3 +17,5 @@ pydantic
 transformers
 uvicorn
 dvc
+aws
+seaborn
