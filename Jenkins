@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+    stages {
+        stage('Checkout') {
+                steps {
+                    echo 'Getting project..'
+                    git branch: 'main', url:
+                    'https://github.com/https://github.com/AlekseyKasatkin/urfu_mlops_2sem_finalproject/.git'
+                }
+            }
+        }
+        stage('Build Docker Image') {
+            steps {
+                echo 'Building..'
+                sh 'docker build -t mlops_project . '
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+
+        stage('Run Docker Image') {
+            steps {
+                echo 'Deploying....'
+                sh 'docker run -p 5000:5000 mlops_project'
+            }
+        }
+}
