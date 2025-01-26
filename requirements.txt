@@ -19,3 +19,5 @@ uvicorn
 dvc
 aws
 seaborn
+TensorFlow
+tf-keras
