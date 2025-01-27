@@ -1,5 +1,5 @@
 # Dockerfile
-FROM python:3.8-slim
+FROM python:3.1-slim
 
 WORKDIR /mlops_proj
 
