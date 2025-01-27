@@ -4,7 +4,7 @@ from transformers import pipeline
 import uvicorn
 # from fastapi.middleware.cors import CORSMiddleware
 import logging
-
+from typing import List
 # Настройка логирования
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -32,7 +32,12 @@ class TextRequest(BaseModel):
     """
     Класс, определяющий формат входных данных для конечной точки analyze_sentiment.
     """
-    texts: list[str]
+    print('hallo')
+    texts: List[str]
+
+@app.get("/")
+async def read_root():
+    return {"message": "Welcome to the sentiment analysis API!"}
 
 @app.post("/analyze_sentiment/", response_model=list[dict])
 async def analyze_sentiment(request: TextRequest):
